@@ -75,17 +75,23 @@ The script creates `12032486-sketch/campusflow-csci426` as a public repository (
 
 The screenshots below are genuine browser captures of the deployed CampusFlow app, taken in Chrome at desktop (1440 px) and mobile (390 px) viewport widths. They are served as static assets directly from the same Vercel production website. The project has a screenshot download helper (`download-screenshots.ps1` / `download-screenshots.sh`) which saves the corresponding image files under `docs/screenshots/` before GitHub publication.
 
-**Desktop dashboard**  \n![Desktop dashboard](https://campusflow-csci426.vercel.app/screenshots/dashboard-desktop.jpg)
+**Desktop dashboard**  
+![Desktop dashboard](https://campusflow-csci426.vercel.app/screenshots/dashboard-desktop.jpg)
 
-**Course management**  \n![Course management](https://campusflow-csci426.vercel.app/screenshots/courses-desktop.jpg)
+**Course management**  
+![Course management](https://campusflow-csci426.vercel.app/screenshots/courses-desktop.jpg)
 
-**Study planner**  \n![Study planner](https://campusflow-csci426.vercel.app/screenshots/planner-desktop.jpg)
+**Study planner**  
+![Study planner](https://campusflow-csci426.vercel.app/screenshots/planner-desktop.jpg)
 
-**Performance analytics**  \n![Performance analytics](https://campusflow-csci426.vercel.app/screenshots/performance-desktop.jpg)
+**Performance analytics**  
+![Performance analytics](https://campusflow-csci426.vercel.app/screenshots/performance-desktop.jpg)
 
-**Mobile dashboard**  \n![Mobile dashboard](https://campusflow-csci426.vercel.app/screenshots/dashboard-mobile.jpg)
+**Mobile dashboard**  
+![Mobile dashboard](https://campusflow-csci426.vercel.app/screenshots/dashboard-mobile.jpg)
 
-**Mobile navigation menu**  \n![Mobile navigation menu](https://campusflow-csci426.vercel.app/screenshots/mobile-menu.jpg)
+**Mobile navigation menu**  
+![Mobile navigation menu](https://campusflow-csci426.vercel.app/screenshots/mobile-menu.jpg)
 
 These images were captured from the actual application, not fabricated mockups. To fetch image files locally, run the included screenshot download script or open the URLs above.
 

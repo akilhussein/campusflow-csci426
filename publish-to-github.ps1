@@ -15,7 +15,8 @@ if ($actual -ne $expected) { throw "Signed in as '$actual', expected '$expected'
 # Capture the hosted, real browser screenshots in the GitHub repository.
 & (Join-Path $PSScriptRoot 'download-screenshots.ps1')
 git add README.md docs/browser-qa-results.json docs/screenshots download-screenshots.ps1 download-screenshots.sh publish-to-github.ps1
-if (-not (git diff --cached --quiet)) {
+git diff --cached --quiet
+if ($LASTEXITCODE -ne 0) {
     git commit -m 'Add verified browser QA and production screenshots'
     if ($LASTEXITCODE -ne 0) { throw 'Could not commit screenshot and QA files.' }
 }
@@ -23,8 +24,10 @@ git branch -M main
 $repo = '12032486-sketch/campusflow-csci426'
 gh repo view $repo *> $null
 if ($LASTEXITCODE -eq 0) {
-  $origin = git remote get-url origin 2>$null
-  if (-not $origin) { git remote add origin "https://github.com/$repo.git" }
+  $remotes = @(git remote)
+  if ('origin' -notin $remotes) { git remote add origin "https://github.com/$repo.git" }
+  $origin = (git remote get-url origin).Trim()
+  if ($origin -ne "https://github.com/$repo.git" -and $origin -ne "git@github.com:$repo.git") { throw "Unexpected Git remote: $origin" }
   git push -u origin main
 } else {
   gh repo create $repo --public --source . --remote origin --push --description 'React student portal for CSCI426 Advanced Web Programming Phase 1'
