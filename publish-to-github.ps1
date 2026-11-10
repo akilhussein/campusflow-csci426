@@ -1,4 +1,4 @@
-# CampusFlow CSCI426: publish local Git history to GitHub.
+﻿# CampusFlow CSCI426: publish local Git history to GitHub.
 $ErrorActionPreference = 'Stop'
 Set-Location $PSScriptRoot
 if (-not (Get-Command git -ErrorAction SilentlyContinue)) { throw 'Install Git first: https://git-scm.com/downloads' }
@@ -9,7 +9,7 @@ if ($LASTEXITCODE -ne 0) {
   gh auth login --web --git-protocol https
   if ($LASTEXITCODE -ne 0) { throw 'GitHub login was not completed.' }
 }
-$expected = '12032486-sketch'
+$expected = 'akilhussein'
 $actual = (gh api user -q '.login').Trim()
 if ($actual -ne $expected) { throw "Signed in as '$actual', expected '$expected'. Please verify the account before publishing." }
 # Capture the hosted, real browser screenshots in the GitHub repository.
@@ -21,7 +21,7 @@ if ($LASTEXITCODE -ne 0) {
     if ($LASTEXITCODE -ne 0) { throw 'Could not commit screenshot and QA files.' }
 }
 git branch -M main
-$repo = '12032486-sketch/campusflow-csci426'
+$repo = 'akilhussein/campusflow-csci426'
 gh repo view $repo *> $null
 if ($LASTEXITCODE -eq 0) {
   $remotes = @(git remote)
@@ -34,3 +34,4 @@ if ($LASTEXITCODE -eq 0) {
 }
 if ($LASTEXITCODE -ne 0) { throw 'GitHub publishing failed. Review the error above.' }
 Write-Host "Published: https://github.com/$repo"
+
