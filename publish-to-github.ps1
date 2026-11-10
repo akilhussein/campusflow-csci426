@@ -12,6 +12,13 @@ if ($LASTEXITCODE -ne 0) {
 $expected = '12032486-sketch'
 $actual = (gh api user -q '.login').Trim()
 if ($actual -ne $expected) { throw "Signed in as '$actual', expected '$expected'. Please verify the account before publishing." }
+# Capture the hosted, real browser screenshots in the GitHub repository.
+& (Join-Path $PSScriptRoot 'download-screenshots.ps1')
+git add README.md docs/browser-qa-results.json docs/screenshots download-screenshots.ps1 download-screenshots.sh publish-to-github.ps1
+if (-not (git diff --cached --quiet)) {
+    git commit -m 'Add verified browser QA and production screenshots'
+    if ($LASTEXITCODE -ne 0) { throw 'Could not commit screenshot and QA files.' }
+}
 git branch -M main
 $repo = '12032486-sketch/campusflow-csci426'
 gh repo view $repo *> $null

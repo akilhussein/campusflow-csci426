@@ -8,6 +8,10 @@ if ! gh auth status >/dev/null 2>&1; then gh auth login --web --git-protocol htt
 expected=12032486-sketch
 actual="$(gh api user -q '.login')"
 [[ "$actual" == "$expected" ]] || { echo "Signed in as '$actual', expected '$expected'." >&2; exit 1; }
+# Save the verified production screenshots into the repository before publishing.
+bash download-screenshots.sh
+git add README.md docs/browser-qa-results.json docs/screenshots download-screenshots.ps1 download-screenshots.sh publish-to-github.sh
+if ! git diff --cached --quiet; then git commit -m 'Add verified browser QA and production screenshots'; fi
 git branch -M main
 repo=12032486-sketch/campusflow-csci426
 if gh repo view "$repo" >/dev/null 2>&1; then

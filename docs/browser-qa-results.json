@@ -1,0 +1,38 @@
+{
+  "course": "CSCI426 Advanced Web Programming \u2014 Phase 1",
+  "project": "CampusFlow",
+  "testedAt": "2026-11-10",
+  "site": "https://campusflow-csci426.vercel.app",
+  "browser": "Chrome 157 via Playwright",
+  "passed": 17,
+  "total": 17,
+  "javascriptErrors": 0,
+  "checks": [
+    "Homepage returned HTTP 200",
+    "Correct page title",
+    "Dashboard loaded",
+    "Courses page loaded",
+    "Add course functional",
+    "Dynamic course route works",
+    "Course progress slider updates",
+    "localStorage persists new course and progress",
+    "Planner task creation works",
+    "Completed task filter works",
+    "Completed task persists after reload",
+    "Performance page loaded",
+    "Contact form available",
+    "Contact demo confirmation works",
+    "About page loaded",
+    "Mobile navigation opens",
+    "No JavaScript page errors"
+  ],
+  "screenshots": {
+    "dashboard-desktop.jpg": "https://campusflow-csci426.vercel.app/screenshots/dashboard-desktop.jpg",
+    "courses-desktop.jpg": "https://campusflow-csci426.vercel.app/screenshots/courses-desktop.jpg",
+    "planner-desktop.jpg": "https://campusflow-csci426.vercel.app/screenshots/planner-desktop.jpg",
+    "performance-desktop.jpg": "https://campusflow-csci426.vercel.app/screenshots/performance-desktop.jpg",
+    "dashboard-mobile.jpg": "https://campusflow-csci426.vercel.app/screenshots/dashboard-mobile.jpg",
+    "mobile-menu.jpg": "https://campusflow-csci426.vercel.app/screenshots/mobile-menu.jpg"
+  },
+  "note": "This is a frontend-only prototype: data is saved in each visitor browser, and the contact form does not send mail."
+}

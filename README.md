@@ -71,16 +71,31 @@ bash publish-to-github.sh
 
 The script creates `12032486-sketch/campusflow-csci426` as a public repository (or pushes to it if it already exists and is accessible), preserving the commit history. Only run it in an account you control.
 
-## Screenshots and demonstration
+## Real production screenshots (November 10, 2026)
 
-A screenshot of an actual running browser is required in the project README by the assignment. To generate truthful screenshots after installing dependencies, run the site and capture:
+The screenshots below are genuine browser captures of the deployed CampusFlow app, taken in Chrome at desktop (1440 px) and mobile (390 px) viewport widths. They are served as static assets directly from the same Vercel production website. The project has a screenshot download helper (`download-screenshots.ps1` / `download-screenshots.sh`) which saves the corresponding image files under `docs/screenshots/` before GitHub publication.
 
-1. Overview/dashboard at desktop width.
-2. Courses listing and one dynamic course page.
-3. Study planner with a few sample tasks.
-4. The mobile navigation at 390px width.
+**Desktop dashboard**  \n![Desktop dashboard](https://campusflow-csci426.vercel.app/screenshots/dashboard-desktop.jpg)
 
-Save them under `docs/screenshots/`, commit them and embed Markdown image links here. The source archive does not fabricate browser screenshots; actual screenshots should be made from the deployed site or local running build before final submission.
+**Course management**  \n![Course management](https://campusflow-csci426.vercel.app/screenshots/courses-desktop.jpg)
+
+**Study planner**  \n![Study planner](https://campusflow-csci426.vercel.app/screenshots/planner-desktop.jpg)
+
+**Performance analytics**  \n![Performance analytics](https://campusflow-csci426.vercel.app/screenshots/performance-desktop.jpg)
+
+**Mobile dashboard**  \n![Mobile dashboard](https://campusflow-csci426.vercel.app/screenshots/dashboard-mobile.jpg)
+
+**Mobile navigation menu**  \n![Mobile navigation menu](https://campusflow-csci426.vercel.app/screenshots/mobile-menu.jpg)
+
+These images were captured from the actual application, not fabricated mockups. To fetch image files locally, run the included screenshot download script or open the URLs above.
+
+## Live browser quality assurance
+
+**17 of 17 automated browser checks passed** against the live production site on November 10, 2026 using Google Chrome (headless). The checks covered home HTTP 200, page rendering, courses, creating a course, a dynamic course URL, progress slider, browser data persistence, planner task creation/completion/filtering, the performance and about pages, local contact-form confirmation, mobile navigation, and JavaScript console errors (zero).
+
+- [Production QA results JSON](https://campusflow-csci426.vercel.app/qa-result.json)
+- Local record: [`docs/browser-qa-results.json`](docs/browser-qa-results.json)
+- Interactive browser checks passed, but this prototype is not a security-reviewed or backend-powered multi-user product.
 
 ## Suggested demo/acceptance checks
 
