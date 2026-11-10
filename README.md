@@ -4,6 +4,8 @@ CampusFlow is a responsive, **frontend-only React student portal** that combines
 
 **Live production demo:** https://campusflow-csci426.vercel.app/
 
+**Project report:** [docs/CampusFlow_Phase1_Report.pdf](docs/CampusFlow_Phase1_Report.pdf)
+
 ## Functional routes
 
 | Route | Purpose |
